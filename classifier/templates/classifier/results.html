@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classification Results</title>
+</head>
+<body>
+    <h2>Classification Results</h2>
+    <img src="{{ image_url }}" alt="Uploaded Image" style="width: 300px; height: auto;">
+    <ul>
+        {% for result in results %}
+            <li>{{ result.1 }}: {{ result.2|floatformat:2 }}%</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'classify_image' %}">Upload Another Image</a>
+</body>
+</html>
